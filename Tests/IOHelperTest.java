@@ -43,11 +43,20 @@ public class IOHelperTest
 
   @Test
   public void isValidYorN__Pass_whitespace__Returns_False() {
+    String[] testValues = {"", " ", "  ", "\t", "\r", "\n"};
+
+    for (String testValue : testValues) {
+      String message = "Testing '" + testValue + "'";
+      assertFalse(message, IOHelper.isValidYorN((testValue)));
+    }
+    /*
     assertFalse(IOHelper.isValidYorN(""));
     assertFalse(IOHelper.isValidYorN(" "));
     assertFalse(IOHelper.isValidYorN("  "));
     assertFalse(IOHelper.isValidYorN("\t"));
     assertFalse(IOHelper.isValidYorN("\r"));
     assertFalse(IOHelper.isValidYorN("\n"));
+
+     */
   }
 }
